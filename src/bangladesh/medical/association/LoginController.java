@@ -40,7 +40,7 @@ public class LoginController {
         {"4004", "Security and Maintenance", "Security and Maintenance123"}, // Security and Maintenance
         {"5005", "Hospitals", "Hospitals123"}, // Hospitals
         {"6006", "Admin", "Admin123"}, // Admin
-        {"7007", "Pharmaceutical Companies", "Pharmaceutical Companies123"}, // Pharmaceutical Companies
+        {"7007", "Pharmaceutical Companies", "Pharm123"}, // Pharmaceutical Companies
         {"8008", "NGO", "NGO123"}, // NGO
     };
 
@@ -84,6 +84,7 @@ public class LoginController {
                 case "Admin":
                     break;
                 case "Pharmaceutical Companies":
+		    loadPharmaceuticalCompanyDashboard();
                     break;
                 case "NGO":
                     break;
@@ -111,4 +112,26 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+   private void loadPharmaceuticalCompanyDashboard() {
+    try { FXMLLoader loader = new FXMLLoader(getClass().getResource("pharmaconf.fxml"));
+    Parent root = loader.load();
+    
+    // Access the controller after the FXML file is loaded
+    /*PharmaconfController pharmaconfController = loader.getController();
+    Conference conference = pharmaconfController.gatherConferenceInfo();
+
+    // Create the view controller for displaying the conference information
+    ConfviewController viewConf = new ConfviewController();
+    viewConf.displayConferenceInfo(conference);
+    */
+    Scene scene = new Scene(root);
+    Stage stage = new Stage();
+    stage.setScene(scene);
+    stage.show();
+	    }   
+     catch (IOException e) {
+            e.printStackTrace();
+        }
+
+   }
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bangladeshmedicalassociation.PharmaconfController">
+   <children>
+      <Button layoutX="80.0" layoutY="346.0" mnemonicParsing="false" onAction="#showConf" text="Show Conference information" />
+      <Button layoutX="301.0" layoutY="346.0" mnemonicParsing="false" onAction="#showAttnd" text="Show attendees information" />
+      <TextField fx:id="confId" layoutX="236.0" layoutY="79.0" />
+      <TextField fx:id="confTitle" layoutX="236.0" layoutY="124.0" />
+      <TextField fx:id="attCount" layoutX="236.0" layoutY="165.0" />
+      <Label layoutX="136.0" layoutY="83.0" text="Conference ID :" />
+      <Label layoutX="133.0" layoutY="128.0" text="Conference title:" />
+      <Label layoutX="116.0" layoutY="169.0" text="Attendance count:" />
+      <Label layoutX="116.0" layoutY="208.0" text="Conference Host:" />
+      <Label layoutX="118.0" layoutY="251.0" text="Additional details:" />
+      <TextField fx:id="confHost" layoutX="236.0" layoutY="204.0" />
+      <TextArea fx:id="addDetails" layoutX="230.0" layoutY="251.0" prefHeight="57.0" prefWidth="161.0" />
+   </children>
+</AnchorPane>
