@@ -35,12 +35,12 @@ public class LoginController {
     // Define usernames and passwords for each user type
     private final String[][] userCredentials = {
         {"1001", "Doctor", "doctor123"}, // Doctor
-        {"2002", "Patient", "Patient123"}, // Patient
-        {"3003", "Medical Student", "Medical Student123"}, // Medical Student
-        {"4004", "Security and Maintenance", "Security and Maintenance123"}, // Security and Maintenance
-        {"5005", "Hospitals", "Hospitals123"}, // Hospitals
-        {"6006", "Admin", "Admin123"}, // Admin
-        {"7007", "Pharmaceutical Companies", "Pharm123"}, // Pharmaceutical Companies
+        {"2002", "Patient", "patient123"}, // Patient
+        {"3003", "Medical Student", "medical123"}, // Medical Student
+        {"4004", "Security and Maintenance", "security123"}, // Security and Maintenance
+        {"5005", "Hospitals", "hospital123"}, // Hospitals
+        {"6006", "Admin", "admin123"}, // Admin
+        {"7007", "Pharmaceutical Companies", "pharma123"}, // Pharmaceutical Companies
         {"8008", "NGO", "NGO123"}, // NGO
     };
 
@@ -74,6 +74,7 @@ public class LoginController {
                     loadDoctorDashboard();
                     break;
                 case "Patient":
+                    loadPatientDashboard();
                     break;
                 case "Medical Student":
                     break;
@@ -84,7 +85,7 @@ public class LoginController {
                 case "Admin":
                     break;
                 case "Pharmaceutical Companies":
-		    loadPharmaceuticalCompanyDashboard();
+                    loadPharmaceuticalCompanyDashboard();
                     break;
                 case "NGO":
                     break;
@@ -112,26 +113,37 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-   private void loadPharmaceuticalCompanyDashboard() {
-    try { FXMLLoader loader = new FXMLLoader(getClass().getResource("pharmaconf.fxml"));
-    Parent root = loader.load();
-    
-    // Access the controller after the FXML file is loaded
-    /*PharmaconfController pharmaconfController = loader.getController();
-    Conference conference = pharmaconfController.gatherConferenceInfo();
 
-    // Create the view controller for displaying the conference information
-    ConfviewController viewConf = new ConfviewController();
-    viewConf.displayConferenceInfo(conference);
-    */
-    Scene scene = new Scene(root);
-    Stage stage = new Stage();
-    stage.setScene(scene);
-    stage.show();
-	    }   
-     catch (IOException e) {
+    private void loadPatientDashboard() {
+        try {
+            // Load the PatientDashboard.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("PatientDashboard.fxml"));
+            // Load the FXML file
+            Parent root = loader.load();
+            // Create a new stage
+            Stage stage = new Stage();
+            // Set the scene with the loaded root
+            stage.setScene(new Scene(root));
+            // Set the title of the stage
+            stage.setTitle("Patient's Dashboard");
+            // Show the stage
+            stage.show();
+        } catch (IOException e) {
+            // Handle any IOException that may occur during loading
             e.printStackTrace();
         }
+    }
 
-   }
+    private void loadPharmaceuticalCompanyDashboard() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("pharmaconf.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
