@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bangladesh.medical.association.DoctorDashboardController">
+   <children>
+      <Label layoutX="241.0" layoutY="26.0" text="Doctor's Dashboard">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="73.0" layoutY="419.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="227.0" text="Collaboration" />
+      <Button layoutX="72.0" layoutY="469.0" mnemonicParsing="false" text="Log Out">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="72.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="227.0" text="Appointment Scheduling" />
+      <Button layoutX="72.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="227.0" text="Update Profile" />
+      <Button layoutX="72.0" layoutY="366.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="227.0" text="Prescription Management" />
+      <Button layoutX="370.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="227.0" text="Feedback and Reviews" />
+      <Button layoutX="508.0" layoutY="419.0" mnemonicParsing="false" text="Search Profile" />
+      <TextField layoutX="371.0" layoutY="317.0" prefHeight="25.0" prefWidth="227.0" promptText="Enter Name" />
+      <ComboBox layoutX="373.0" layoutY="367.0" prefHeight="25.0" prefWidth="227.0" promptText="Profile Type" />
+      <Label layoutX="72.0" layoutY="103.0" text="Name:" />
+      <Label layoutX="72.0" layoutY="129.0" text="Id:" />
+      <Label layoutX="72.0" layoutY="155.0" text="Department:" />
+      <Label layoutX="72.0" layoutY="181.0" text="Date of Birth:" />
+      <Label layoutX="72.0" layoutY="207.0" text="Gender:" />
+      <Line endX="400.0" endY="8.0" layoutX="150.0" layoutY="233.0" startX="8.0" startY="8.0" />
+      <Label fx:id="NameInDash" layoutX="124.0" layoutY="103.0" />
+      <Label fx:id="IdInDash" layoutX="124.0" layoutY="129.0" />
+      <Label fx:id="DepartmentInDash" layoutX="151.0" layoutY="155.0" />
+      <Label fx:id="DobInDash" layoutX="160.0" layoutY="181.0" />
+      <Label fx:id="Gender" layoutX="113.0" layoutY="207.0" />
+   </children>
+</AnchorPane>
