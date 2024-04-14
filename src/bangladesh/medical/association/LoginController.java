@@ -100,14 +100,19 @@ public class LoginController {
     }
 
     private void loadDoctorDashboard() {
-        try {
-            // Load the Doctor's Dashboard FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("DoctorDashboard.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Doctor's Dashboard");
-            stage.show();
+    try {
+        // Load the DoctorDashboard.fxml file
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("DoctorDashboard.fxml"));
+        Parent root = loader.load();
+        
+        // Create a new stage
+        Stage stage = new Stage();
+        // Set the scene with the loaded root
+        stage.setScene(new Scene(root));
+        // Set the title of the stage
+        stage.setTitle("Doctor's Dashboard");
+        // Show the stage
+        stage.show();
         } catch (IOException e) {
             // Handle any IOException that may occur during loading
             e.printStackTrace();

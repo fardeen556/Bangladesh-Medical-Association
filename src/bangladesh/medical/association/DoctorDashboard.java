@@ -16,6 +16,8 @@ public class DoctorDashboard extends Application {
     public void start(Stage primaryStage) throws Exception {
         // Load DoctorDashboard.fxml
         FXMLLoader loader = new FXMLLoader(getClass().getResource("DoctorDashboard.fxml"));
+        DoctorDashboardController controller = new DoctorDashboardController();
+        loader.setController(controller);
         Parent root = loader.load();
 
         // Set up the primary stage
