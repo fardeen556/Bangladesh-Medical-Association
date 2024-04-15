@@ -6,14 +6,14 @@ package bangladesh.medical.association;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.collections.FXCollections;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -100,19 +100,23 @@ public class LoginController {
     }
 
     private void loadDoctorDashboard() {
-    try {
-        // Load the DoctorDashboard.fxml file
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("DoctorDashboard.fxml"));
-        Parent root = loader.load();
-        
-        // Create a new stage
-        Stage stage = new Stage();
-        // Set the scene with the loaded root
-        stage.setScene(new Scene(root));
-        // Set the title of the stage
-        stage.setTitle("Doctor's Dashboard");
-        // Show the stage
-        stage.show();
+        try {
+            // Load the DoctorDashboard.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("DoctorDashboard.fxml"));
+            Parent root = loader.load();
+            
+            // Close the login window
+            Stage loginStage = (Stage) userIdField.getScene().getWindow();
+            loginStage.close();
+            
+            // Create a new stage for the doctor's dashboard
+            Stage stage = new Stage();
+            // Set the scene with the loaded root
+            stage.setScene(new Scene(root));
+            // Set the title of the stage
+            stage.setTitle("Doctor's Dashboard");
+            // Show the stage
+            stage.show();
         } catch (IOException e) {
             // Handle any IOException that may occur during loading
             e.printStackTrace();
@@ -125,7 +129,12 @@ public class LoginController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("PatientDashboard.fxml"));
             // Load the FXML file
             Parent root = loader.load();
-            // Create a new stage
+            
+            // Close the login window
+            Stage loginStage = (Stage) userIdField.getScene().getWindow();
+            loginStage.close();
+            
+            // Create a new stage for the patient's dashboard
             Stage stage = new Stage();
             // Set the scene with the loaded root
             stage.setScene(new Scene(root));
@@ -151,4 +160,20 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+    
+    static void showLogin() {
+        try {
+            FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("Login_user.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Login");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+
