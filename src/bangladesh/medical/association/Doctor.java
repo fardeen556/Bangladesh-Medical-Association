@@ -22,7 +22,7 @@ public class Doctor extends Application {
 
         // Set up the primary stage
         primaryStage.setTitle("Doctor's Dashboard");
-        primaryStage.setScene(new Scene(root, 677, 555));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 

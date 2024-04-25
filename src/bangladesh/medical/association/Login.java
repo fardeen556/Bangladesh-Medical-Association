@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 /**
  * Main class to launch the Bangladesh Medical Association application.
  */
-public class BangladeshMedicalAssociation extends Application {
+public class Login extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -22,7 +22,7 @@ public class BangladeshMedicalAssociation extends Application {
 
         // Set up the primary stage
         primaryStage.setTitle("Bangladesh Medical Association");
-        primaryStage.setScene(new Scene(root, 523, 402));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
