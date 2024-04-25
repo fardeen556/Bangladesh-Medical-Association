@@ -15,7 +15,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.collections.FXCollections;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class LoginController {
